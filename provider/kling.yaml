@@ -29,7 +29,17 @@ credentials_for_provider:
     url: https://platform.acedata.cloud/console/credentials
 tools:
 - tools/kling_generate.yaml
+- tools/kling_generate_motion.yaml
+- tools/kling_lip_sync.yaml
+- tools/kling_talking_photo.yaml
+- tools/kling_goods_studio.yaml
+- tools/kling_video_commerce.yaml
+- tools/kling_virtual_try_on.yaml
+- tools/kling_apparel.yaml
+- tools/kling_voices.yaml
+- tools/kling_elements.yaml
 - tools/kling_task_retrieve.yaml
+- tools/kling_tasks_retrieve_batch.yaml
 extra:
   python:
     source: provider/kling.py

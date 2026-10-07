@@ -1,0 +1,180 @@
+identity:
+  name: kling_generate_motion
+  author: acedatacloud
+  label:
+    en_US: Kling Generate Motion
+    zh_Hans: Kling 运动控制
+description:
+  human:
+    en_US: Generate Motion through the Ace Data Cloud Kling API.
+    zh_Hans: 通过 Ace Data Cloud Kling API 执行 Generate Motion。
+  llm: Generate Motion through the Ace Data Cloud Kling API. For asynchronous results,
+    preserve task_id and use the task retrieval tool until completion. A successful
+    submission is not completed output.
+parameters:
+- name: model_name
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Model Name
+    zh_Hans: 模型名称
+  human_description:
+    en_US: Set model name for this operation.
+    zh_Hans: 模型名称，可选，枚举值：`kling-v2-6` 或 `kling-v3`。不传时使用服务端默认模型。
+  llm_description: Set model name for this operation.
+  options:
+  - value: kling-v2-6
+    label:
+      en_US: kling-v2-6
+      zh_Hans: kling-v2-6
+  - value: kling-v3
+    label:
+      en_US: kling-v3
+      zh_Hans: kling-v3
+- name: mode
+  type: select
+  required: true
+  form: form
+  label:
+    en_US: Mode
+    zh_Hans: 模式
+  human_description:
+    en_US: Set mode for this operation.
+    zh_Hans: 视频生成模式，可选，枚举值：`std`（标准模式，720p，消耗较低）或 `pro`（专业模式，1080p，画质更高）。默认值为 `std`。
+  llm_description: Set mode for this operation.
+  options:
+  - value: std
+    label:
+      en_US: std
+      zh_Hans: std
+  - value: pro
+    label:
+      en_US: pro
+      zh_Hans: pro
+- name: keep_original_sound
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Keep Original Sound
+    zh_Hans: 保留原声
+  human_description:
+    en_US: Set keep original sound for this operation.
+    zh_Hans: 是否保留参考视频的原始音频，可选，枚举值：`yes`（保留）或 `no`（移除）。默认值为 `yes`。
+  llm_description: Set keep original sound for this operation.
+  options:
+  - value: 'yes'
+    label:
+      en_US: 'yes'
+      zh_Hans: 'yes'
+  - value: 'no'
+    label:
+      en_US: 'no'
+      zh_Hans: 'no'
+- name: watermark_info
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Watermark Info
+    zh_Hans: watermark info
+  human_description:
+    en_US: Set watermark info for this operation. Enter a JSON array or object where
+      applicable. Enter a JSON array or object where applicable. Enter a JSON array
+      or object where applicable. Enter a JSON array or object where applicable. Enter
+      a JSON array or object where applicable. Enter a JSON array or object where
+      applicable.
+    zh_Hans: '水印配置，可选。对象格式为 `{ "enabled": true }`，`enabled` 设为 `true` 时额外生成带水印的结果，暂不支持自定义水印。
+      数组或对象请使用 JSON 格式。'
+  llm_description: Set watermark info for this operation. Enter a JSON array or object
+    where applicable. Enter a JSON array or object where applicable. Enter a JSON
+    array or object where applicable. Enter a JSON array or object where applicable.
+    Enter a JSON array or object where applicable. Enter a JSON array or object where
+    applicable.
+- name: image_url
+  type: string
+  required: true
+  form: form
+  label:
+    en_US: Image Url
+    zh_Hans: 图片链接
+  human_description:
+    en_US: Set image url for this operation.
+    zh_Hans: 人物外观参考图 URL。支持 JPG/JPEG/PNG，文件 ≤50MB，宽和高均 ≥300px，宽高比 1:2.5～2.5:1；人物应清晰显示上半身或全身及头部，避免遮挡、倒立、平躺或主体过小。
+  llm_description: Set image url for this operation.
+- name: video_url
+  type: string
+  required: true
+  form: form
+  label:
+    en_US: Video Url
+    zh_Hans: 视频链接
+  human_description:
+    en_US: Set video url for this operation.
+    zh_Hans: 动作参考视频 URL。支持 MP4/MOV，文件 ≤100MB，宽和高各 340–3850px，至少 3 秒；`character_orientation=image`
+      时最长 10 秒，`character_orientation=video` 时最长 30 秒。建议使用人物始终在画面内的连续单镜头视频。
+  llm_description: Set video url for this operation.
+- name: character_orientation
+  type: select
+  required: true
+  form: form
+  label:
+    en_US: Character Orientation
+    zh_Hans: 角色方向
+  human_description:
+    en_US: Set character orientation for this operation.
+    zh_Hans: 生成视频中人物的朝向，可选择与参考图像（`image`）或参考视频（`video`）保持一致。
+  llm_description: Set character orientation for this operation.
+  options:
+  - value: image
+    label:
+      en_US: image
+      zh_Hans: image
+  - value: video
+    label:
+      en_US: video
+      zh_Hans: video
+- name: prompt
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Set prompt for this operation.
+    zh_Hans: 文本提示词，可同时包含正向描述和反向描述。
+  llm_description: Set prompt for this operation.
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 回调地址，视频生成完成后系统将向该 URL 发送回调通知。
+  llm_description: Set callback url for this operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_generate_motion.py

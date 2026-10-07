@@ -1,0 +1,187 @@
+identity:
+  name: kling_lip_sync
+  author: acedatacloud
+  label:
+    en_US: Kling Lip Sync
+    zh_Hans: Kling 对口型
+description:
+  human:
+    en_US: Lip Sync through the Ace Data Cloud Kling API.
+    zh_Hans: 通过 Ace Data Cloud Kling API 执行 Lip Sync。
+  llm: Lip Sync through the Ace Data Cloud Kling API. For asynchronous results, preserve
+    task_id and use the task retrieval tool until completion. A successful submission
+    is not completed output.
+parameters:
+- name: video_id
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Video Id
+    zh_Hans: 视频 ID
+  human_description:
+    en_US: Set video id for this operation.
+    zh_Hans: Kling 生成视频的 ID(例如来自 /kling/videos 的 image2video),需为最近 30 天内生成。与 video_url
+      二选一。
+  llm_description: Set video id for this operation.
+- name: video_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Video Url
+    zh_Hans: 视频链接
+  human_description:
+    en_US: Set video url for this operation.
+    zh_Hans: 待对口型的 5 秒/10 秒视频的公开 URL。与 video_id 二选一。
+  llm_description: Set video url for this operation.
+- name: mode
+  type: select
+  required: true
+  form: form
+  label:
+    en_US: Mode
+    zh_Hans: 模式
+  human_description:
+    en_US: Set mode for this operation.
+    zh_Hans: audio2video:用音频片段驱动;text2video:用文本 + 音色驱动。
+  llm_description: Set mode for this operation.
+  options:
+  - value: audio2video
+    label:
+      en_US: audio2video
+      zh_Hans: audio2video
+  - value: text2video
+    label:
+      en_US: text2video
+      zh_Hans: text2video
+- name: audio_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Audio Url
+    zh_Hans: 音频链接
+  human_description:
+    en_US: Set audio url for this operation.
+    zh_Hans: 驱动音频的公开 URL，仅在 `mode=audio2video` 且 `audio_type=url` 时必填。
+  llm_description: Set audio url for this operation.
+- name: audio_type
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Audio Type
+    zh_Hans: audio type
+  human_description:
+    en_US: Set audio type for this operation.
+    zh_Hans: 音频的提供方式(用于 audio2video)。
+  llm_description: Set audio type for this operation.
+  options:
+  - value: url
+    label:
+      en_US: url
+      zh_Hans: url
+  - value: file
+    label:
+      en_US: file
+      zh_Hans: file
+- name: audio_file
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Audio File
+    zh_Hans: audio file
+  human_description:
+    en_US: Set audio file for this operation.
+    zh_Hans: 音频文件的 Base64，仅在 `mode=audio2video` 且 `audio_type=file` 时必填。支持 .mp3/.wav/.m4a/.aac，不超过
+      5MB。
+  llm_description: Set audio file for this operation.
+- name: text
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Text
+    zh_Hans: 文本
+  human_description:
+    en_US: Set text for this operation.
+    zh_Hans: 要朗读的文本(当 mode 为 text2video 时必填,最多 120 个字符)。
+  llm_description: Set text for this operation.
+- name: voice_id
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Voice Id
+    zh_Hans: voice id
+  human_description:
+    en_US: Set voice id for this operation.
+    zh_Hans: 使用的音色(当 mode 为 text2video 时必填)。
+  llm_description: Set voice id for this operation.
+- name: voice_language
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Voice Language
+    zh_Hans: voice language
+  human_description:
+    en_US: Set voice language for this operation.
+    zh_Hans: text2video 的音色语言。
+  llm_description: Set voice language for this operation.
+  options:
+  - value: zh
+    label:
+      en_US: zh
+      zh_Hans: zh
+  - value: en
+    label:
+      en_US: en
+      zh_Hans: en
+- name: voice_speed
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Voice Speed
+    zh_Hans: voice speed
+  human_description:
+    en_US: Set voice speed for this operation.
+    zh_Hans: text2video 的语速(0.8–2.0,保留一位小数)。
+  llm_description: Set voice speed for this operation.
+  min: 0.8
+  max: 2.0
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 若提供(或 async=true),将立即返回 task_id,并在结果就绪后通过回调推送。
+  llm_description: Set callback url for this operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_lip_sync.py

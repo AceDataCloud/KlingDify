@@ -1,0 +1,148 @@
+identity:
+  name: kling_voices
+  author: acedatacloud
+  label:
+    en_US: Kling Voices
+    zh_Hans: Kling 音色管理
+description:
+  human:
+    en_US: Voices through the Ace Data Cloud Kling API.
+    zh_Hans: 通过 Ace Data Cloud Kling API 执行 Voices。
+  llm: Voices through the Ace Data Cloud Kling API. For asynchronous results, preserve
+    task_id and use the task retrieval tool until completion. A successful submission
+    is not completed output.
+parameters:
+- name: action
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Action
+    zh_Hans: 操作
+  human_description:
+    en_US: Set action for this operation.
+    zh_Hans: 设置操作。
+  llm_description: Set action for this operation.
+  options:
+  - value: list
+    label:
+      en_US: list
+      zh_Hans: list
+  - value: presets
+    label:
+      en_US: presets
+      zh_Hans: presets
+  - value: retrieve
+    label:
+      en_US: retrieve
+      zh_Hans: retrieve
+  - value: delete
+    label:
+      en_US: delete
+      zh_Hans: delete
+  - value: create
+    label:
+      en_US: create
+      zh_Hans: create
+- name: id
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Id
+    zh_Hans: ID
+  human_description:
+    en_US: Set id for this operation.
+    zh_Hans: 平台资产 ID。
+  llm_description: Set id for this operation.
+- name: page_num
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Page Num
+    zh_Hans: 页码
+  human_description:
+    en_US: Set page num for this operation.
+    zh_Hans: 设置页码。
+  llm_description: Set page num for this operation.
+  min: 1
+  max: 1000
+- name: page_size
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Page Size
+    zh_Hans: 每页数量
+  human_description:
+    en_US: Set page size for this operation.
+    zh_Hans: 设置每页数量。
+  llm_description: Set page size for this operation.
+  min: 1
+  max: 500
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 设置回调 URL。
+  llm_description: Set callback url for this operation.
+- name: voice_name
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Voice Name
+    zh_Hans: voice name
+  human_description:
+    en_US: Set voice name for this operation.
+    zh_Hans: 设置voice name。
+  llm_description: Set voice name for this operation.
+- name: voice_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Voice Url
+    zh_Hans: 参考语音链接
+  human_description:
+    en_US: Set voice url for this operation.
+    zh_Hans: 清晰单人声音，时长 5–30 秒，支持 mp3、wav、mp4、mov。
+  llm_description: Set voice url for this operation.
+- name: confirm
+  type: boolean
+  required: false
+  form: form
+  label:
+    en_US: Confirm
+    zh_Hans: 确认删除或归档
+  human_description:
+    en_US: Set true only to confirm the selected deletion or archive operation.
+    zh_Hans: 仅在确认执行删除或归档操作时设为 true。
+  llm_description: Set true only to confirm the selected deletion or archive operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_voices.py

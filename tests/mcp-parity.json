@@ -1,0 +1,217 @@
+{
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "mapping": [
+    {
+      "mcp_tool": "kling_generate_with_assets",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "request": "Expanded request fields (including nested JSON inputs)"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_list_models",
+      "dify_tools": [],
+      "parameters": {},
+      "unresolved": [],
+      "note": "Model/action selectors and the API reference; informational guidance does not submit a request."
+    },
+    {
+      "mcp_tool": "kling_list_actions",
+      "dify_tools": [],
+      "parameters": {},
+      "unresolved": [],
+      "note": "Model/action selectors and the API reference; informational guidance does not submit a request."
+    },
+    {
+      "mcp_tool": "kling_generate_turbo_video",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "request": "Expanded request fields (including nested JSON inputs)"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_generate_storyboard",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "request": "Expanded request fields (including nested JSON inputs)"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_goods_studio",
+      "dify_tools": [
+        "kling_goods_studio"
+      ],
+      "parameters": {
+        "request": "Expanded request fields (including nested JSON inputs)"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_video_commerce",
+      "dify_tools": [
+        "kling_video_commerce"
+      ],
+      "parameters": {
+        "request": "Expanded request fields (including nested JSON inputs)"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_get_task",
+      "dify_tools": [
+        "kling_task_retrieve"
+      ],
+      "parameters": {
+        "task_id": "task_id"
+      },
+      "unresolved": [],
+      "note": "Set action=retrieve"
+    },
+    {
+      "mcp_tool": "kling_get_tasks_batch",
+      "dify_tools": [
+        "kling_tasks_retrieve_batch"
+      ],
+      "parameters": {
+        "task_ids": "ids"
+      },
+      "unresolved": [],
+      "note": "Set action=retrieve_batch"
+    },
+    {
+      "mcp_tool": "kling_lip_sync",
+      "dify_tools": [
+        "kling_lip_sync"
+      ],
+      "parameters": {
+        "mode": "mode",
+        "video_url": "video_url",
+        "video_id": "video_id",
+        "audio_url": "audio_url",
+        "audio_type": "audio_type",
+        "audio_file": "audio_file",
+        "text": "text",
+        "voice_id": "voice_id",
+        "voice_language": "voice_language",
+        "voice_speed": "voice_speed",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_talking_photo",
+      "dify_tools": [
+        "kling_talking_photo"
+      ],
+      "parameters": {
+        "image_url": "image_url",
+        "audio_url": "audio_url",
+        "model": "model",
+        "duration": "duration",
+        "mode": "mode",
+        "prompt": "prompt",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_generate_motion",
+      "dify_tools": [
+        "kling_generate_motion"
+      ],
+      "parameters": {
+        "image_url": "image_url",
+        "video_url": "video_url",
+        "character_orientation": "character_orientation",
+        "mode": "mode",
+        "model_name": "model_name",
+        "prompt": "prompt",
+        "keep_original_sound": "keep_original_sound",
+        "watermark_info": "watermark_info",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": ""
+    },
+    {
+      "mcp_tool": "kling_generate_video",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "model": "model",
+        "mode": "mode",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale",
+        "camera_control": "camera_control",
+        "image_list": "image_list",
+        "video_list": "video_list",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=text2video"
+    },
+    {
+      "mcp_tool": "kling_generate_video_from_image",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "prompt": "prompt",
+        "start_image_url": "start_image_url",
+        "end_image_url": "end_image_url",
+        "model": "model",
+        "mode": "mode",
+        "aspect_ratio": "aspect_ratio",
+        "duration": "duration",
+        "generate_audio": "generate_audio",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale",
+        "camera_control": "camera_control",
+        "image_list": "image_list",
+        "video_list": "video_list",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=image2video"
+    },
+    {
+      "mcp_tool": "kling_extend_video",
+      "dify_tools": [
+        "kling_generate_video"
+      ],
+      "parameters": {
+        "video_id": "video_id",
+        "prompt": "prompt",
+        "model": "model",
+        "mode": "mode",
+        "duration": "duration",
+        "negative_prompt": "negative_prompt",
+        "cfg_scale": "cfg_scale",
+        "callback_url": "callback_url"
+      },
+      "unresolved": [],
+      "note": "Set action=extend"
+    }
+  ]
+}

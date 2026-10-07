@@ -1,0 +1,230 @@
+[
+  {
+    "name": "kling_generate_video-1",
+    "tool": "kling_generate_video",
+    "inputs": {
+      "prompt": "Test"
+    },
+    "method": "POST",
+    "path": "/kling/videos",
+    "body": {
+      "action": "text2video"
+    }
+  },
+  {
+    "name": "kling_generate_motion-2",
+    "tool": "kling_generate_motion",
+    "inputs": {
+      "mode": "std",
+      "character_orientation": "image",
+      "image_url": "https://example.org/reference.png",
+      "video_url": "https://example.org/reference.mp4"
+    },
+    "method": "POST",
+    "path": "/kling/motion",
+    "body": {
+      "image_url": "https://example.org/reference.png",
+      "video_url": "https://example.org/reference.mp4"
+    }
+  },
+  {
+    "name": "kling_lip_sync-3",
+    "tool": "kling_lip_sync",
+    "inputs": {
+      "mode": "audio2video",
+      "video_url": "https://example.org/reference.mp4",
+      "audio_url": "https://example.org/reference.mp3"
+    },
+    "method": "POST",
+    "path": "/kling/lip-sync",
+    "body": {
+      "audio_url": "https://example.org/reference.mp3"
+    }
+  },
+  {
+    "name": "kling_talking_photo-4",
+    "tool": "kling_talking_photo",
+    "inputs": {
+      "image_url": "https://example.org/reference.png",
+      "audio_url": "https://example.org/reference.mp3"
+    },
+    "method": "POST",
+    "path": "/kling/talking-photo",
+    "body": {
+      "image_url": "https://example.org/reference.png"
+    }
+  },
+  {
+    "name": "kling_voices-5",
+    "tool": "kling_voices",
+    "inputs": {
+      "action": "list"
+    },
+    "method": "POST",
+    "path": "/kling/voices",
+    "body": {
+      "action": "list"
+    },
+    "read_only": true,
+    "absent": [
+      "async"
+    ],
+    "async": false
+  },
+  {
+    "name": "kling_voices-6",
+    "tool": "kling_voices",
+    "inputs": {
+      "action": "delete",
+      "id": "owned-item"
+    },
+    "method": "POST",
+    "path": "/kling/voices",
+    "body": {},
+    "error": true
+  },
+  {
+    "name": "kling_elements-7",
+    "tool": "kling_elements",
+    "inputs": {
+      "action": "list"
+    },
+    "method": "POST",
+    "path": "/kling/elements",
+    "body": {
+      "action": "list"
+    },
+    "read_only": true,
+    "absent": [
+      "async"
+    ],
+    "async": false
+  },
+  {
+    "name": "kling_elements-8",
+    "tool": "kling_elements",
+    "inputs": {
+      "action": "delete",
+      "id": "owned-item"
+    },
+    "method": "POST",
+    "path": "/kling/elements",
+    "body": {},
+    "error": true
+  },
+  {
+    "name": "kling_goods_studio-9",
+    "tool": "kling_goods_studio",
+    "inputs": {
+      "contents": "[{\"type\": \"goods_title\", \"text\": \"Test\"}, {\"type\": \"ref_image\", \"url\": \"https://example.org/reference.png\"}]",
+      "settings": "{\"aspect_ratio\": \"16:9\", \"duration\": 15}"
+    },
+    "method": "POST",
+    "path": "/kling/goods-studio",
+    "body": {
+      "contents": [
+        {
+          "type": "goods_title",
+          "text": "Test"
+        },
+        {
+          "type": "ref_image",
+          "url": "https://example.org/reference.png"
+        }
+      ],
+      "settings": {
+        "aspect_ratio": "16:9",
+        "duration": 15
+      }
+    }
+  },
+  {
+    "name": "kling_video_commerce-10",
+    "tool": "kling_video_commerce",
+    "inputs": {
+      "contents": "[{\"type\": \"avatar_image\", \"url\": \"https://example.org/person.png\"}, {\"type\": \"speech_script\", \"text\": \"Test\"}]",
+      "settings": "{\"aspect_ratio\": \"16:9\"}"
+    },
+    "method": "POST",
+    "path": "/kling/video-commerce",
+    "body": {
+      "contents": [
+        {
+          "type": "avatar_image",
+          "url": "https://example.org/person.png"
+        },
+        {
+          "type": "speech_script",
+          "text": "Test"
+        }
+      ],
+      "settings": {
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+  {
+    "name": "kling_virtual_try_on-11",
+    "tool": "kling_virtual_try_on",
+    "inputs": {
+      "contents": "[{\"type\": \"person_image\", \"url\": \"https://example.org/person.png\"}, {\"type\": \"product_image\", \"url\": \"https://example.org/product.png\"}]",
+      "settings": "{}"
+    },
+    "method": "POST",
+    "path": "/kling/virtual-try-on",
+    "body": {
+      "contents": [
+        {
+          "type": "person_image",
+          "url": "https://example.org/person.png"
+        },
+        {
+          "type": "product_image",
+          "url": "https://example.org/product.png"
+        }
+      ],
+      "settings": {}
+    }
+  },
+  {
+    "name": "kling_apparel-12",
+    "tool": "kling_apparel",
+    "inputs": {
+      "contents": "[{\"type\": \"product_info\", \"text\": \"Test\"}, {\"type\": \"product_image\", \"url\": \"https://example.org/product.png\"}]",
+      "settings": "{\"aspect_ratio\": \"16:9\"}"
+    },
+    "method": "POST",
+    "path": "/kling/apparel",
+    "body": {
+      "contents": [
+        {
+          "type": "product_info",
+          "text": "Test"
+        },
+        {
+          "type": "product_image",
+          "url": "https://example.org/product.png"
+        }
+      ],
+      "settings": {
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+  {
+    "name": "kling_tasks_retrieve_batch-13",
+    "tool": "kling_tasks_retrieve_batch",
+    "inputs": {
+      "ids": "[\"owned-task\"]"
+    },
+    "method": "POST",
+    "path": "/kling/tasks",
+    "body": {
+      "action": "retrieve_batch",
+      "ids": [
+        "owned-task"
+      ]
+    },
+    "read_only": true
+  }
+]
