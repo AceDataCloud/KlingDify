@@ -154,17 +154,10 @@ parameters:
     zh_Hans: element image list
   human_description:
     en_US: Set element image list for this operation. Enter a JSON array or object
-      where applicable. Enter a JSON array or object where applicable. Enter a JSON
-      array or object where applicable. Enter a JSON array or object where applicable.
-      Enter a JSON array or object where applicable. Enter a JSON array or object
       where applicable.
-    zh_Hans: 设置element image list。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON
-      格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。
+    zh_Hans: 设置element image list。 数组或对象请使用 JSON 格式。
   llm_description: Set element image list for this operation. Enter a JSON array or
-    object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    object where applicable.
 - name: element_video_list
   type: string
   required: false
@@ -174,17 +167,10 @@ parameters:
     zh_Hans: element video list
   human_description:
     en_US: Set element video list for this operation. Enter a JSON array or object
-      where applicable. Enter a JSON array or object where applicable. Enter a JSON
-      array or object where applicable. Enter a JSON array or object where applicable.
-      Enter a JSON array or object where applicable. Enter a JSON array or object
       where applicable.
-    zh_Hans: 设置element video list。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON
-      格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。
+    zh_Hans: 设置element video list。 数组或对象请使用 JSON 格式。
   llm_description: Set element video list for this operation. Enter a JSON array or
-    object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    object where applicable.
 - name: confirm
   type: boolean
   required: false

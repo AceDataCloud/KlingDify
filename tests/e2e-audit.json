@@ -1,0 +1,352 @@
+{
+  "tested_at": "2026-10-07T08:53:40.139728+00:00",
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local",
+  "transport": "official remote-debug; signature verification enabled",
+  "browser_test_run": true,
+  "unit_contract_tests": "37 passed, 1 warning in 0.93s",
+  "marketplace_toolkit_passed": true,
+  "package_sha256": "d845f50e6e05ba3aa12b394cb072923b27d48a15a33ecc8eabf94e862d787d38",
+  "exact_package_serverless_install_passed": true,
+  "marketplace_install_tested": false,
+  "cloud_tested": false,
+  "cases": [
+    {
+      "case": "Kling Element Presets Audit",
+      "tool": "kling_elements",
+      "workflow_run_id": "4123d50b-db62-481d-90b2-ecfe0ddac9bf",
+      "workflow_status": "failed",
+      "service_status": null,
+      "task_id": "",
+      "trace_id": "",
+      "media_urls": [],
+      "error": "An error occurred in the acedatacloud/kling/kling, please contact the author of acedatacloud/kling/kling for help, error type: AceDataKlingError, error details: Connection failed (ReadTimeout). Preserve any accepted task ID and inspect request history before resubmitting.",
+      "new_submission": true,
+      "resolved_by": "kling-element-presets-fixed-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "e7581a9e-774a-4179-afca-a1a85e2011a9",
+          "trace_id": "3d3a3120-e91c-44c7-8da8-ea7d919e935b",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:23:58.683668Z"
+        },
+        {
+          "id": "6fe341f2-02c6-43c5-ab39-093717ceae78",
+          "trace_id": "0929504f-96b4-4732-b967-b570b5159c3a",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:22:59.573585Z"
+        },
+        {
+          "id": "1879417d-af9e-41b2-bc60-102b78bb4647",
+          "trace_id": "3ba4e6f9-5d93-4838-9669-483f4591bc55",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:21:54.737308Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [],
+      "workflow": "evidence/kling-element-presets-audit-workflow.json"
+    },
+    {
+      "case": "Kling Voice Presets Fixed",
+      "tool": "kling_voices",
+      "workflow_run_id": "99ced837-a24d-4a69-9058-716a105a7979",
+      "workflow_status": "succeeded",
+      "service_status": "pending",
+      "task_id": "be39f41d-0b67-4409-8c3e-874c013c9afb",
+      "trace_id": "",
+      "media_urls": [],
+      "error": null,
+      "new_submission": true,
+      "resolved_by": "kling-voice-presets-fixed-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "13101257-1c69-4bf4-a78c-1df9488ed1d6",
+          "trace_id": "86935dc2-3458-4d0e-a016-9eb9f004484e",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:39:25.093245Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "elapsed",
+        "finished_at",
+        "started_at",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-voice-presets-fixed-workflow.json"
+    },
+    {
+      "case": "Kling Elements Read Query Result",
+      "tool": "kling_task_retrieve",
+      "workflow_run_id": "827ce54d-4cdd-4598-b8c3-e4abd9b30250",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "9d0d2aaa-f802-4542-a394-5ac7aa78f865",
+      "trace_id": "7b5f870b-ea74-4b8f-9857-e90165620800",
+      "media_urls": [],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-elements-read-query-result-workflow.json"
+    },
+    {
+      "case": "Kling Element Presets Fixed",
+      "tool": "kling_elements",
+      "workflow_run_id": "a34eb273-4437-42f9-9960-8e213a7e2e17",
+      "workflow_status": "succeeded",
+      "service_status": "pending",
+      "task_id": "499026db-f244-4f1e-ba81-8f41eced051f",
+      "trace_id": "",
+      "media_urls": [],
+      "error": null,
+      "new_submission": true,
+      "resolved_by": "kling-element-presets-fixed-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "5cb91fa7-e229-47c7-b894-a33083ae01a8",
+          "trace_id": "f8ff5473-a600-4743-8ff7-5066282b0ada",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:39:26.645037Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "elapsed",
+        "finished_at",
+        "started_at",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-element-presets-fixed-workflow.json"
+    },
+    {
+      "case": "Kling Audit Batch",
+      "tool": "kling_tasks_retrieve_batch",
+      "workflow_run_id": "54a5f0a7-43b2-4bcc-a0af-1a35717c56b7",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "",
+      "trace_id": "",
+      "media_urls": [
+        "https://platform2.cdn.acedata.cloud/kling/f24531c0-8ca3-4e30-9f04-775ba09513f5.mp4"
+      ],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [
+        {
+          "case": "Kling Audit Batch",
+          "size": 2385159,
+          "sha256": "6fe2f2106671170d94ca834d80c479e94a28f7e533d7baa226ed888432a93d44",
+          "duration": "5.041667",
+          "streams": [
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "width": null,
+              "height": null
+            },
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1280,
+              "height": 720
+            }
+          ],
+          "full_decode": true
+        }
+      ],
+      "result_fields": [
+        "items"
+      ],
+      "screenshot": "evidence/kling-audit-batch.png",
+      "workflow": "evidence/kling-audit-batch-workflow.json"
+    },
+    {
+      "case": "Kling Voice Presets Fixed Result",
+      "tool": "kling_task_retrieve",
+      "workflow_run_id": "8c17035a-902f-49b5-97f4-dc56f212ebe3",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "be39f41d-0b67-4409-8c3e-874c013c9afb",
+      "trace_id": "86935dc2-3458-4d0e-a016-9eb9f004484e",
+      "media_urls": [],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-voice-presets-fixed-result-workflow.json"
+    },
+    {
+      "case": "Kling Voice Presets Audit",
+      "tool": "kling_voices",
+      "workflow_run_id": "7e79791c-cb37-4271-9046-002e8dd0d5ae",
+      "workflow_status": "failed",
+      "service_status": null,
+      "task_id": "",
+      "trace_id": "",
+      "media_urls": [],
+      "error": "An error occurred in the acedatacloud/kling/kling, please contact the author of acedatacloud/kling/kling for help, error type: AceDataKlingError, error details: Connection failed (ReadTimeout). Preserve any accepted task ID and inspect request history before resubmitting.",
+      "new_submission": true,
+      "resolved_by": "kling-voice-presets-fixed-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "a8a6da90-ef1b-4bbf-a3df-18ceaa553b49",
+          "trace_id": "4cfb1c3d-56a5-4e2e-8baf-a03b5089d13a",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:31:50.006842Z"
+        },
+        {
+          "id": "d1d3e9fa-839f-40cd-8e7a-79d9b89167d6",
+          "trace_id": "e4599f8e-43bf-4f7c-b344-a0fe6bb5bf2b",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:30:48.748221Z"
+        },
+        {
+          "id": "f9c8e47f-65c5-47b8-8802-27afcb115ce8",
+          "trace_id": "589c76b8-1f4e-4ac1-b375-23fa75b97359",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:29:46.114310Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [],
+      "workflow": "evidence/kling-voice-presets-audit-workflow.json"
+    },
+    {
+      "case": "Kling Voices Read Query Result",
+      "tool": "kling_task_retrieve",
+      "workflow_run_id": "ff9df7d0-b9b3-4349-938c-70de01d425eb",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "2218baa9-6ac9-46b9-bc56-9c6b8dabce32",
+      "trace_id": "606643ef-a226-4f0a-8666-d45002b36fef",
+      "media_urls": [],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-voices-read-query-result-workflow.json"
+    },
+    {
+      "case": "Kling Element Presets Fixed Result",
+      "tool": "kling_task_retrieve",
+      "workflow_run_id": "e71177b2-55d9-42db-87c5-0b7760838c12",
+      "workflow_status": "succeeded",
+      "service_status": "succeeded",
+      "task_id": "499026db-f244-4f1e-ba81-8f41eced051f",
+      "trace_id": "f8ff5473-a600-4743-8ff7-5066282b0ada",
+      "media_urls": [],
+      "error": null,
+      "new_submission": false,
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-element-presets-fixed-result-workflow.json"
+    },
+    {
+      "case": "Kling Voices Read Query",
+      "tool": "kling_voices",
+      "workflow_run_id": "c502195d-9ede-41a9-927a-a4558b39fd41",
+      "workflow_status": "succeeded",
+      "service_status": "pending",
+      "task_id": "2218baa9-6ac9-46b9-bc56-9c6b8dabce32",
+      "trace_id": "",
+      "media_urls": [],
+      "error": null,
+      "new_submission": true,
+      "resolved_by": "kling-voices-read-query-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "623885fa-afca-47ce-b71e-21a10e72c044",
+          "trace_id": "606643ef-a226-4f0a-8666-d45002b36fef",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:37:51.803592Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "elapsed",
+        "finished_at",
+        "started_at",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-voices-read-query-workflow.json"
+    },
+    {
+      "case": "Kling Elements Read Query",
+      "tool": "kling_elements",
+      "workflow_run_id": "4f0901ed-bd98-4962-85ba-58b1c1f8078c",
+      "workflow_status": "succeeded",
+      "service_status": "pending",
+      "task_id": "9d0d2aaa-f802-4542-a394-5ac7aa78f865",
+      "trace_id": "",
+      "media_urls": [],
+      "error": null,
+      "new_submission": true,
+      "resolved_by": "kling-elements-read-query-result",
+      "final_service_status": "succeeded",
+      "billing": [
+        {
+          "id": "94032bf9-5b46-48c7-a959-2ba38e11a080",
+          "trace_id": "7b5f870b-ea74-4b8f-9857-e90165620800",
+          "status_code": 200,
+          "deducted_amount": 0.0,
+          "created_at": "2026-10-07T08:38:04.219158Z"
+        }
+      ],
+      "billing_match": "owned credential, API and browser run window",
+      "media_verification": [],
+      "result_fields": [
+        "data",
+        "elapsed",
+        "finished_at",
+        "started_at",
+        "success",
+        "task_id"
+      ],
+      "workflow": "evidence/kling-elements-read-query-workflow.json"
+    }
+  ],
+  "primary_blocked": false,
+  "scope_note": "Recorded cases only. Batch regressions reuse earlier paid successful tasks; those media generations are not billed or claimed as new. New paid calls have separate usage reconciliation. Optional untested models/actions are not claimed as passed; original failures and their corrections are preserved."
+}

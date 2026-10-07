@@ -81,17 +81,11 @@ parameters:
     zh_Hans: watermark info
   human_description:
     en_US: Set watermark info for this operation. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable. Enter a JSON array
-      or object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
       applicable.
     zh_Hans: '水印配置，可选。对象格式为 `{ "enabled": true }`，`enabled` 设为 `true` 时额外生成带水印的结果，暂不支持自定义水印。
       数组或对象请使用 JSON 格式。'
   llm_description: Set watermark info for this operation. Enter a JSON array or object
-    where applicable. Enter a JSON array or object where applicable. Enter a JSON
-    array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    where applicable.
 - name: image_url
   type: string
   required: true

@@ -21,15 +21,10 @@ parameters:
     zh_Hans: 素材内容
   human_description:
     en_US: Set contents for this operation. Enter a JSON array or object where applicable.
-      Enter a JSON array or object where applicable. Enter a JSON array or object
-      where applicable. Enter a JSON array or object where applicable. Enter a JSON
-      array or object where applicable. Enter a JSON array or object where applicable.
     zh_Hans: 输入素材列表；每项由 type 和 text、url 或 voice_id 描述。具体组合与数量限制参见集成指南。 数组或对象请使用 JSON
       格式。
   llm_description: Set contents for this operation. Enter a JSON array or object where
-    applicable. Enter a JSON array or object where applicable. Enter a JSON array
-    or object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
+    applicable.
 - name: settings
   type: string
   required: false
@@ -39,15 +34,9 @@ parameters:
     zh_Hans: 设置
   human_description:
     en_US: Set settings for this operation. Enter a JSON array or object where applicable.
-      Enter a JSON array or object where applicable. Enter a JSON array or object
-      where applicable. Enter a JSON array or object where applicable. Enter a JSON
-      array or object where applicable. Enter a JSON array or object where applicable.
-    zh_Hans: 设置设置。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用
-      JSON 格式。 数组或对象请使用 JSON 格式。 数组或对象请使用 JSON 格式。
+    zh_Hans: 设置设置。 数组或对象请使用 JSON 格式。
   llm_description: Set settings for this operation. Enter a JSON array or object where
-    applicable. Enter a JSON array or object where applicable. Enter a JSON array
-    or object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
+    applicable.
 - name: watermark
   type: boolean
   required: false

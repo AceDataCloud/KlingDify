@@ -243,18 +243,12 @@ parameters:
     zh_Hans: 相机控制
   human_description:
     en_US: Optional camera motion control as a JSON object string. Enter a JSON object.
-      Enter a JSON array or object where applicable. Enter a JSON array or object
-      where applicable. Enter a JSON array or object where applicable. Enter a JSON
-      array or object where applicable. Enter a JSON array or object where applicable.
       Enter a JSON array or object where applicable.
     zh_Hans: 包含 6 个字段，用于指定摄像机在不同方向上的运动或变化。`camera_control.type` 须为以下值之一：`simple`、`down_back`、`forward_up`、`left_turn_forward`、`right_turn_forward`。`camera_control.config`
       为可选对象，包含 6 个可选字段：`camera_control.config.horizontal`（水平平移）、`camera_control.config.vertical`（垂直平移）、`camera_control.config.pan`（水平旋转）、`camera_control.config.tilt`（俯仰旋转）、`camera_control.config.roll`（轴向旋转）、`camera_control.config.zoom`（缩放）。每个字段的值为数值类型，取值范围为
       [-1, 1]。 数组或对象请使用 JSON 格式。
   llm_description: Optional camera motion control as a JSON object string. Enter a
-    JSON object. Enter a JSON array or object where applicable. Enter a JSON array
-    or object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable.
+    JSON object. Enter a JSON array or object where applicable.
 - name: image_list
   type: string
   required: false
@@ -264,20 +258,14 @@ parameters:
     zh_Hans: 参考图片
   human_description:
     en_US: JSON array of reference images for kling-o1 or kling-v3-omni. Enter a JSON
-      array. Enter a JSON array or object where applicable. Enter a JSON array or
-      object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable.
+      array. Enter a JSON array or object where applicable.
     zh_Hans: Omni 参考图片列表，仅适用模型 `kling-o1` 和 `kling-v3-omni`。数组元素通过 `image_url` 传入图片链接；可选
       `type` 为首帧 `first_frame` 或尾帧 `end_frame`。当前 legacy-compatible 接口接受 .jpg/.jpeg/.png，单图
       ≤10MB，宽和高均 ≥300px，宽高比 1:2.5～2.5:1。无参考视频时最多 7 张，有参考视频时最多 4 张；尾帧必须与首帧一起使用。素材需在提示词中以
       `<<<image_N>>>` 引用。Omni 请求不支持 `negative_prompt`、`cfg_scale`、`camera_control`
       或 `mode=4k`。 数组或对象请使用 JSON 格式。
   llm_description: JSON array of reference images for kling-o1 or kling-v3-omni. Enter
-    a JSON array. Enter a JSON array or object where applicable. Enter a JSON array
-    or object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable.
+    a JSON array. Enter a JSON array or object where applicable.
 - name: video_list
   type: string
   required: false
@@ -287,20 +275,14 @@ parameters:
     zh_Hans: 参考视频
   human_description:
     en_US: JSON array containing one base or feature reference video. Enter a JSON
-      array. Enter a JSON array or object where applicable. Enter a JSON array or
-      object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable.
+      array. Enter a JSON array or object where applicable.
     zh_Hans: Omni 参考视频列表，仅适用模型 `kling-o1` 和 `kling-v3-omni`，最多 1 个 MP4/MOV 视频，≤200MB，24–60fps。模型限制不同：`kling-o1`
       的参考视频为 3–10 秒，宽和高各 700–2160px；`kling-v3-omni` 为 3–15.5 秒，宽和高各 700–4553px，总像素
       ≤8,294,400，宽高比 0.4–2。`refer_type` 可为 `feature` 或 `base`（默认）；`keep_original_sound`
       可为 `yes` 或 `no`。素材需在提示词中以 `<<<video_1>>>` 引用。`base` 不可与首帧/尾帧共用；存在参考视频时 `generate_audio`
       必须为 `false`。 数组或对象请使用 JSON 格式。
   llm_description: JSON array containing one base or feature reference video. Enter
-    a JSON array. Enter a JSON array or object where applicable. Enter a JSON array
-    or object where applicable. Enter a JSON array or object where applicable. Enter
-    a JSON array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable.
+    a JSON array. Enter a JSON array or object where applicable.
 - name: negative_prompt
   type: string
   required: false
@@ -363,17 +345,11 @@ parameters:
     zh_Hans: 分镜提示词
   human_description:
     en_US: Set multi prompt. Enter a JSON array. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable. Enter a JSON array
-      or object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
       applicable.
     zh_Hans: 1–6 个分镜，index 从 1 连续递增，每个提示词最多 512 字；各分镜时长之和必须等于总时长。自定义分镜不使用全局 prompt。
       数组或对象请使用 JSON 格式。
   llm_description: Set multi prompt. Enter a JSON array. Enter a JSON array or object
-    where applicable. Enter a JSON array or object where applicable. Enter a JSON
-    array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    where applicable.
 - name: element_list
   type: string
   required: false
@@ -383,17 +359,11 @@ parameters:
     zh_Hans: 主体参考
   human_description:
     en_US: Set element list. Enter a JSON array. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable. Enter a JSON array
-      or object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
       applicable.
     zh_Hans: 平台资产 ID 引用，按用户和应用验证归属。仅 V3、V3 Omni 和 O1；主体与图片引用总数受模型限制。 数组或对象请使用 JSON
       格式。
   llm_description: Set element list. Enter a JSON array. Enter a JSON array or object
-    where applicable. Enter a JSON array or object where applicable. Enter a JSON
-    array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    where applicable.
 - name: voice_list
   type: string
   required: false
@@ -403,17 +373,11 @@ parameters:
     zh_Hans: 音色参考
   human_description:
     en_US: Set voice list. Enter a JSON array. Enter a JSON array or object where
-      applicable. Enter a JSON array or object where applicable. Enter a JSON array
-      or object where applicable. Enter a JSON array or object where applicable. Enter
-      a JSON array or object where applicable. Enter a JSON array or object where
       applicable.
     zh_Hans: 平台资产 ID 引用，按用户和应用验证归属。仅 V2.6 pro 且 generate_audio=true，prompt 必须使用 <<<voice_1>>>
       或 <<<voice_2>>>；指定音色按 1.68 Credits/秒计费。 数组或对象请使用 JSON 格式。
   llm_description: Set voice list. Enter a JSON array. Enter a JSON array or object
-    where applicable. Enter a JSON array or object where applicable. Enter a JSON
-    array or object where applicable. Enter a JSON array or object where applicable.
-    Enter a JSON array or object where applicable. Enter a JSON array or object where
-    applicable.
+    where applicable.
 output_schema:
   type: object
   properties:
