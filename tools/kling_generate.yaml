@@ -1,0 +1,360 @@
+identity:
+  name: kling_generate_video
+  author: acedatacloud
+  label:
+    en_US: Kling Generate Video
+    zh_Hans: Kling 生成视频
+description:
+  human:
+    en_US: Generate a video with Ace Data Cloud Kling Videos API.
+    zh_Hans: 通过 Ace Data Cloud Kling Videos API 生成视频。
+  llm: Generate a video from prompt / images via Ace Data Cloud Kling Videos API.
+    Generation returns a task ID. Query the same task until complete; never resubmit
+    a pending generation.
+parameters:
+- name: mode
+  type: select
+  required: false
+  label:
+    en_US: Mode
+    zh_Hans: 模式
+  human_description:
+    en_US: Optional generation mode.
+    zh_Hans: 可选生成模式。
+  llm_description: Optional generation mode.
+  form: form
+  default: std
+  options:
+  - value: std
+    label:
+      en_US: std
+      zh_Hans: std
+  - value: pro
+    label:
+      en_US: pro
+      zh_Hans: pro
+  - value: 4k
+    label:
+      en_US: 4k
+      zh_Hans: 4k
+- name: model
+  type: select
+  required: false
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: Select the current API model for this operation.
+    zh_Hans: 用于生成视频的模型，默认值为 kling-v1。
+  llm_description: Select the current API model for this operation.
+  form: form
+  default: kling-v3-turbo
+  options:
+  - value: kling-v3-turbo
+    label:
+      en_US: kling-v3-turbo
+      zh_Hans: kling-v3-turbo
+  - value: kling-v1
+    label:
+      en_US: kling-v1
+      zh_Hans: kling-v1
+  - value: kling-v1-6
+    label:
+      en_US: kling-v1-6
+      zh_Hans: kling-v1-6
+  - value: kling-v2-master
+    label:
+      en_US: kling-v2-master
+      zh_Hans: kling-v2-master
+  - value: kling-v2-1-master
+    label:
+      en_US: kling-v2-1-master
+      zh_Hans: kling-v2-1-master
+  - value: kling-v2-5-turbo
+    label:
+      en_US: kling-v2-5-turbo
+      zh_Hans: kling-v2-5-turbo
+  - value: kling-v2-6
+    label:
+      en_US: kling-v2-6
+      zh_Hans: kling-v2-6
+  - value: kling-v3
+    label:
+      en_US: kling-v3
+      zh_Hans: kling-v3
+  - value: kling-v3-omni
+    label:
+      en_US: kling-v3-omni
+      zh_Hans: kling-v3-omni
+  - value: kling-o1
+    label:
+      en_US: kling-o1
+      zh_Hans: kling-o1
+- name: action
+  type: select
+  required: false
+  label:
+    en_US: Action
+    zh_Hans: 行为
+  human_description:
+    en_US: Choose how to generate the video.
+    zh_Hans: 选择视频生成方式。
+  llm_description: Choose how to generate the video.
+  form: form
+  default: text2video
+  options:
+  - value: text2video
+    label:
+      en_US: text2video
+      zh_Hans: text2video
+  - value: image2video
+    label:
+      en_US: image2video
+      zh_Hans: image2video
+  - value: extend
+    label:
+      en_US: extend
+      zh_Hans: extend
+- name: prompt
+  type: string
+  required: false
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Required for text2video / image2video / extend.
+    zh_Hans: text2video / image2video / extend 必填。
+  llm_description: Required for text2video / image2video / extend.
+  form: llm
+- name: duration
+  type: number
+  required: false
+  label:
+    en_US: Duration
+    zh_Hans: 时长
+  human_description:
+    en_US: Optional duration in seconds. V3 models support integers 3-15; kling-o1
+      supports 5; other models support 5 or 10.
+    zh_Hans: 可选视频时长。V3 模型支持 3-15 秒整数，kling-o1 仅支持 5 秒，其他模型支持 5 或 10 秒。
+  llm_description: Optional duration in seconds. V3 models support integers 3-15;
+    kling-o1 supports 5; other models support 5 or 10.
+  form: form
+  default: 5
+- name: generate_audio
+  type: boolean
+  required: false
+  label:
+    en_US: Generate Audio
+    zh_Hans: 生成音频
+  human_description:
+    en_US: Whether to generate audio synchronously. Supported by kling-v3, kling-v3-omni,
+      and kling-v2-6 (pro mode only).
+    zh_Hans: 是否同步生成音频。支持 kling-v3、kling-v3-omni 和 kling-v2-6（仅 pro 模式）。
+  llm_description: Whether to generate audio synchronously. Supported by kling-v3,
+    kling-v3-omni, and kling-v2-6 (pro mode only).
+  form: form
+- name: video_id
+  type: string
+  required: false
+  label:
+    en_US: Video ID
+    zh_Hans: 视频ID
+  human_description:
+    en_US: Required for extend.
+    zh_Hans: extend 必填。
+  llm_description: Required for extend.
+  form: form
+- name: cfg_scale
+  type: number
+  required: false
+  label:
+    en_US: CFG scale
+    zh_Hans: 相关性强度
+  human_description:
+    en_US: Optional. Range [0, 1]; higher is closer to prompt.
+    zh_Hans: 可选，范围 [0,1]，越大越贴合提示词。
+  llm_description: Optional. Range [0, 1]; higher is closer to prompt.
+  form: form
+- name: aspect_ratio
+  type: select
+  required: false
+  label:
+    en_US: Aspect ratio
+    zh_Hans: 画面比例
+  human_description:
+    en_US: Optional output aspect ratio.
+    zh_Hans: 可选输出画面比例。
+  llm_description: Optional output aspect ratio.
+  form: form
+  default: '16:9'
+  options:
+  - value: '16:9'
+    label:
+      en_US: '16:9'
+      zh_Hans: '16:9'
+  - value: '9:16'
+    label:
+      en_US: '9:16'
+      zh_Hans: '9:16'
+  - value: '1:1'
+    label:
+      en_US: '1:1'
+      zh_Hans: '1:1'
+- name: end_image_url
+  type: string
+  required: false
+  label:
+    en_US: End Image URL
+    zh_Hans: 尾帧图片链接
+  human_description:
+    en_US: Optional for image2video.
+    zh_Hans: image2video 可选。
+  llm_description: Optional for image2video.
+  form: form
+- name: camera_control
+  type: string
+  required: false
+  label:
+    en_US: Camera control
+    zh_Hans: 相机控制
+  human_description:
+    en_US: Optional camera motion control as a JSON object string. Enter a JSON object.
+    zh_Hans: 可选相机运动控制，使用 JSON 对象字符串。 请填写 JSON 对象。
+  llm_description: Optional camera motion control as a JSON object string. Enter a
+    JSON object.
+  form: form
+- name: image_list
+  type: string
+  required: false
+  label:
+    en_US: Reference Images
+    zh_Hans: 参考图片
+  human_description:
+    en_US: JSON array of reference images for kling-o1 or kling-v3-omni. Enter a JSON
+      array.
+    zh_Hans: kling-o1 或 kling-v3-omni 使用的参考图片 JSON 数组。 请填写 JSON 数组。
+  llm_description: JSON array of reference images for kling-o1 or kling-v3-omni. Enter
+    a JSON array.
+  form: form
+- name: video_list
+  type: string
+  required: false
+  label:
+    en_US: Reference Video
+    zh_Hans: 参考视频
+  human_description:
+    en_US: JSON array containing one base or feature reference video. Enter a JSON
+      array.
+    zh_Hans: 包含一个基础视频或特征参考视频的 JSON 数组。 请填写 JSON 数组。
+  llm_description: JSON array containing one base or feature reference video. Enter
+    a JSON array.
+  form: form
+- name: negative_prompt
+  type: string
+  required: false
+  label:
+    en_US: Negative prompt
+    zh_Hans: 反向提示词
+  human_description:
+    en_US: Optional negative prompt (up to 200 chars).
+    zh_Hans: 可选反向提示词（最多 200 字符）。
+  llm_description: Optional negative prompt (up to 200 chars).
+  form: form
+- name: start_image_url
+  type: string
+  required: false
+  label:
+    en_US: Start Image URL
+    zh_Hans: 首帧图片链接
+  human_description:
+    en_US: Required for image2video.
+    zh_Hans: image2video 必填。
+  llm_description: Required for image2video.
+  form: form
+- name: multi_shot
+  type: boolean
+  required: false
+  label:
+    en_US: Multi Shot
+    zh_Hans: 多镜头
+  human_description:
+    en_US: Set multi shot.
+    zh_Hans: 是否生成多镜头视频，仅支持 kling-v3 和 kling-v3-omni。
+  llm_description: Set multi shot.
+  form: form
+- name: shot_type
+  type: select
+  required: false
+  label:
+    en_US: Shot Type
+    zh_Hans: 分镜模式
+  human_description:
+    en_US: Set shot type.
+    zh_Hans: 分镜方式；multi_shot=true 时必填。intelligence 使用 prompt 自动拆分；customize 使用 multi_prompt。
+  llm_description: Set shot type.
+  form: form
+  options:
+  - value: customize
+    label:
+      en_US: customize
+      zh_Hans: customize
+  - value: intelligence
+    label:
+      en_US: intelligence
+      zh_Hans: intelligence
+- name: multi_prompt
+  type: string
+  required: false
+  label:
+    en_US: Multi Prompt
+    zh_Hans: 分镜提示词
+  human_description:
+    en_US: Set multi prompt. Enter a JSON array.
+    zh_Hans: 1–6 个分镜，index 从 1 连续递增，每个提示词最多 512 字；各分镜时长之和必须等于总时长。自定义分镜不使用全局 prompt。
+      请填写 JSON 数组。
+  llm_description: Set multi prompt. Enter a JSON array.
+  form: form
+- name: element_list
+  type: string
+  required: false
+  label:
+    en_US: Element List
+    zh_Hans: 主体参考
+  human_description:
+    en_US: Set element list. Enter a JSON array.
+    zh_Hans: 平台资产 ID 引用，按用户和应用验证归属。仅 V3、V3 Omni 和 O1；主体与图片引用总数受模型限制。 请填写 JSON 数组。
+  llm_description: Set element list. Enter a JSON array.
+  form: form
+- name: voice_list
+  type: string
+  required: false
+  label:
+    en_US: Voice List
+    zh_Hans: 音色参考
+  human_description:
+    en_US: Set voice list. Enter a JSON array.
+    zh_Hans: 平台资产 ID 引用，按用户和应用验证归属。仅 V2.6 pro 且 generate_audio=true，prompt 必须使用 <<<voice_1>>>
+      或 <<<voice_2>>>；指定音色按 1.68 Credits/秒计费。 请填写 JSON 数组。
+  llm_description: Set voice list. Enter a JSON array.
+  form: form
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_generate.py
