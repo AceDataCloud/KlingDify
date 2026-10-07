@@ -1,0 +1,206 @@
+{
+  "backend_revision": "fa94598267a82545fb1afed6ee26bafd6cbb9ca7",
+  "mcp_revision": "f0eed10abf310824cb4c33d4944c63d3654ac95b",
+  "tools": [
+    {
+      "tool": "kling_generate_video",
+      "method": "POST",
+      "path": "/kling/videos",
+      "parameters": [
+        "mode",
+        "model",
+        "action",
+        "prompt",
+        "duration",
+        "generate_audio",
+        "video_id",
+        "cfg_scale",
+        "aspect_ratio",
+        "callback_url",
+        "end_image_url",
+        "camera_control",
+        "image_list",
+        "video_list",
+        "negative_prompt",
+        "start_image_url",
+        "multi_shot",
+        "shot_type",
+        "multi_prompt",
+        "element_list",
+        "voice_list"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/29187cb2-1acb-43b8-baf5-3f3f709292eb.json"
+    },
+    {
+      "tool": "kling_generate_motion",
+      "method": "POST",
+      "path": "/kling/motion",
+      "parameters": [
+        "model_name",
+        "mode",
+        "keep_original_sound",
+        "watermark_info",
+        "image_url",
+        "video_url",
+        "character_orientation",
+        "prompt",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/2c26cb33-46ac-4bd7-82f9-0ec63e688172.json"
+    },
+    {
+      "tool": "kling_lip_sync",
+      "method": "POST",
+      "path": "/kling/lip-sync",
+      "parameters": [
+        "video_id",
+        "video_url",
+        "mode",
+        "audio_url",
+        "audio_type",
+        "audio_file",
+        "text",
+        "voice_id",
+        "voice_language",
+        "voice_speed",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/a8b06673-3565-4989-b6be-bd638f72eadb.json"
+    },
+    {
+      "tool": "kling_talking_photo",
+      "method": "POST",
+      "path": "/kling/talking-photo",
+      "parameters": [
+        "image_url",
+        "audio_url",
+        "prompt",
+        "model",
+        "duration",
+        "mode",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/1daf8204-7306-4c54-8014-a00c5996cbfe.json"
+    },
+    {
+      "tool": "kling_goods_studio",
+      "method": "POST",
+      "path": "/kling/goods-studio",
+      "parameters": [
+        "contents",
+        "settings",
+        "watermark",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/f60184f9-3174-5d54-8b97-5b2e6d3753a5.json"
+    },
+    {
+      "tool": "kling_video_commerce",
+      "method": "POST",
+      "path": "/kling/video-commerce",
+      "parameters": [
+        "contents",
+        "settings",
+        "watermark",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/ad648b8c-ae07-5852-a9c5-c0fcda578908.json"
+    },
+    {
+      "tool": "kling_virtual_try_on",
+      "method": "POST",
+      "path": "/kling/virtual-try-on",
+      "parameters": [
+        "contents",
+        "settings",
+        "watermark",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/2a6262b2-aa0a-57b1-91ae-636b1a8322e6.json"
+    },
+    {
+      "tool": "kling_apparel",
+      "method": "POST",
+      "path": "/kling/apparel",
+      "parameters": [
+        "contents",
+        "settings",
+        "watermark",
+        "callback_url"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/25004129-94a5-5084-ace2-48cfbf14aa95.json"
+    },
+    {
+      "tool": "kling_voices",
+      "method": "POST",
+      "path": "/kling/voices",
+      "parameters": [
+        "action",
+        "id",
+        "page_num",
+        "page_size",
+        "callback_url",
+        "voice_name",
+        "voice_url",
+        "confirm"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/94be993f-e70a-5499-a458-bb4853ccc292.json"
+    },
+    {
+      "tool": "kling_elements",
+      "method": "POST",
+      "path": "/kling/elements",
+      "parameters": [
+        "action",
+        "id",
+        "page_num",
+        "page_size",
+        "callback_url",
+        "element_name",
+        "element_description",
+        "reference_type",
+        "element_voice_id",
+        "element_image_list",
+        "element_video_list",
+        "confirm"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/bfc78ffd-b786-5325-8803-311d70fe8ddf.json"
+    },
+    {
+      "tool": "kling_task_retrieve",
+      "method": "POST",
+      "path": "/kling/tasks",
+      "parameters": [
+        "task_id",
+        "wait_seconds"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/f11ce529-5303-4913-8b9a-7146aa5d7016.json"
+    },
+    {
+      "tool": "kling_tasks_retrieve_batch",
+      "method": "POST",
+      "path": "/kling/tasks",
+      "parameters": [
+        "ids"
+      ],
+      "aliases": {},
+      "schema_source": "openapi/f11ce529-5303-4913-8b9a-7146aa5d7016.json"
+    }
+  ],
+  "mcp_scope": "kling",
+  "notes": [
+    "Informational MCP model/action lists are represented by tool dropdowns and README capability tables.",
+    "GPT Image covers image-generation/editing/task capabilities of the broader OpenAI MCP; chat is supplied by ModelProviderDify."
+  ]
+}

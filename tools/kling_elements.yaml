@@ -1,0 +1,205 @@
+identity:
+  name: kling_elements
+  author: acedatacloud
+  label:
+    en_US: Kling Elements
+    zh_Hans: Kling 主体管理
+description:
+  human:
+    en_US: Elements through the Ace Data Cloud Kling API.
+    zh_Hans: 通过 Ace Data Cloud Kling API 执行 Elements。
+  llm: Elements through the Ace Data Cloud Kling API. For asynchronous results, preserve
+    task_id and use the task retrieval tool until completion. A successful submission
+    is not completed output.
+parameters:
+- name: action
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Action
+    zh_Hans: 操作
+  human_description:
+    en_US: Set action for this operation.
+    zh_Hans: 设置操作。
+  llm_description: Set action for this operation.
+  options:
+  - value: list
+    label:
+      en_US: list
+      zh_Hans: list
+  - value: presets
+    label:
+      en_US: presets
+      zh_Hans: presets
+  - value: retrieve
+    label:
+      en_US: retrieve
+      zh_Hans: retrieve
+  - value: delete
+    label:
+      en_US: delete
+      zh_Hans: delete
+  - value: create
+    label:
+      en_US: create
+      zh_Hans: create
+- name: id
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Id
+    zh_Hans: ID
+  human_description:
+    en_US: Set id for this operation.
+    zh_Hans: 平台资产 ID。
+  llm_description: Set id for this operation.
+- name: page_num
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Page Num
+    zh_Hans: 页码
+  human_description:
+    en_US: Set page num for this operation.
+    zh_Hans: 设置页码。
+  llm_description: Set page num for this operation.
+  min: 1
+  max: 1000
+- name: page_size
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Page Size
+    zh_Hans: 每页数量
+  human_description:
+    en_US: Set page size for this operation.
+    zh_Hans: 设置每页数量。
+  llm_description: Set page size for this operation.
+  min: 1
+  max: 500
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 设置回调 URL。
+  llm_description: Set callback url for this operation.
+- name: element_name
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Element Name
+    zh_Hans: element name
+  human_description:
+    en_US: Set element name for this operation.
+    zh_Hans: 设置element name。
+  llm_description: Set element name for this operation.
+- name: element_description
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Element Description
+    zh_Hans: element description
+  human_description:
+    en_US: Set element description for this operation.
+    zh_Hans: 设置element description。
+  llm_description: Set element description for this operation.
+- name: reference_type
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Reference Type
+    zh_Hans: reference type
+  human_description:
+    en_US: Set reference type for this operation.
+    zh_Hans: 设置reference type。
+  llm_description: Set reference type for this operation.
+  options:
+  - value: image_refer
+    label:
+      en_US: image_refer
+      zh_Hans: image_refer
+  - value: video_refer
+    label:
+      en_US: video_refer
+      zh_Hans: video_refer
+- name: element_voice_id
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Element Voice Id
+    zh_Hans: element voice id
+  human_description:
+    en_US: Set element voice id for this operation.
+    zh_Hans: 属于当前用户和应用的平台音色 ID。
+  llm_description: Set element voice id for this operation.
+- name: element_image_list
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Element Image List
+    zh_Hans: element image list
+  human_description:
+    en_US: Set element image list for this operation. Enter a JSON array or object
+      where applicable.
+    zh_Hans: 设置element image list。 数组或对象请使用 JSON 格式。
+  llm_description: Set element image list for this operation. Enter a JSON array or
+    object where applicable.
+- name: element_video_list
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Element Video List
+    zh_Hans: element video list
+  human_description:
+    en_US: Set element video list for this operation. Enter a JSON array or object
+      where applicable.
+    zh_Hans: 设置element video list。 数组或对象请使用 JSON 格式。
+  llm_description: Set element video list for this operation. Enter a JSON array or
+    object where applicable.
+- name: confirm
+  type: boolean
+  required: false
+  form: form
+  label:
+    en_US: Confirm
+    zh_Hans: 确认删除或归档
+  human_description:
+    en_US: Set true only to confirm the selected deletion or archive operation.
+    zh_Hans: 仅在确认执行删除或归档操作时设为 true。
+  llm_description: Set true only to confirm the selected deletion or archive operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_elements.py

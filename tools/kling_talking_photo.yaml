@@ -1,0 +1,157 @@
+identity:
+  name: kling_talking_photo
+  author: acedatacloud
+  label:
+    en_US: Kling Talking Photo
+    zh_Hans: Kling 说话照片
+description:
+  human:
+    en_US: Talking Photo through the Ace Data Cloud Kling API.
+    zh_Hans: 通过 Ace Data Cloud Kling API 执行 Talking Photo。
+  llm: Talking Photo through the Ace Data Cloud Kling API. For asynchronous results,
+    preserve task_id and use the task retrieval tool until completion. A successful
+    submission is not completed output.
+parameters:
+- name: image_url
+  type: string
+  required: true
+  form: form
+  label:
+    en_US: Image Url
+    zh_Hans: 图片链接
+  human_description:
+    en_US: Set image url for this operation.
+    zh_Hans: 人物照片的公开 URL,建议使用清晰正脸照片。
+  llm_description: Set image url for this operation.
+- name: audio_url
+  type: string
+  required: true
+  form: form
+  label:
+    en_US: Audio Url
+    zh_Hans: 音频链接
+  human_description:
+    en_US: Set audio url for this operation.
+    zh_Hans: 驱动音频的公开 URL(.mp3/.wav/.m4a/.aac,不超过 5MB),人物会按其内容对口型说话。
+  llm_description: Set audio url for this operation.
+- name: prompt
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Set prompt for this operation.
+    zh_Hans: 可选:照片动画化阶段的动作/表情提示词。
+  llm_description: Set prompt for this operation.
+- name: model
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: Select a model currently supported by this API. Availability and pricing
+      depend on the chosen model.
+    zh_Hans: 照片动画化阶段使用的 Kling 模型。
+  llm_description: Select a model currently supported by this API. Availability and
+    pricing depend on the chosen model.
+  options:
+  - value: kling-v1
+    label:
+      en_US: kling-v1
+      zh_Hans: kling-v1
+  - value: kling-v1-6
+    label:
+      en_US: kling-v1-6
+      zh_Hans: kling-v1-6
+  - value: kling-v2-master
+    label:
+      en_US: kling-v2-master
+      zh_Hans: kling-v2-master
+  - value: kling-v2-1-master
+    label:
+      en_US: kling-v2-1-master
+      zh_Hans: kling-v2-1-master
+  - value: kling-v2-5-turbo
+    label:
+      en_US: kling-v2-5-turbo
+      zh_Hans: kling-v2-5-turbo
+  - value: kling-v2-6
+    label:
+      en_US: kling-v2-6
+      zh_Hans: kling-v2-6
+- name: duration
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Duration
+    zh_Hans: 时长（秒）
+  human_description:
+    en_US: Set duration for this operation.
+    zh_Hans: 视频时长(秒),同时限制朗读音频的长度。
+  llm_description: Set duration for this operation.
+  options:
+  - value: 5
+    label:
+      en_US: '5'
+      zh_Hans: '5'
+  - value: 10
+    label:
+      en_US: '10'
+      zh_Hans: '10'
+- name: mode
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Mode
+    zh_Hans: 模式
+  human_description:
+    en_US: Set mode for this operation.
+    zh_Hans: 照片动画化阶段的生成质量。
+  llm_description: Set mode for this operation.
+  options:
+  - value: std
+    label:
+      en_US: std
+      zh_Hans: std
+  - value: pro
+    label:
+      en_US: pro
+      zh_Hans: pro
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 若提供(或 async=true),将立即返回 task_id,并在结果就绪后通过回调推送。
+  llm_description: Set callback url for this operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/kling_talking_photo.py
