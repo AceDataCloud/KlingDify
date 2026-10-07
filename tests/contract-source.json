@@ -1,0 +1,17 @@
+{
+  "backend_revision": "7b4bbf0e4f6b83c273baed1d5b8e9bea0f3ece1c",
+  "apis": [
+    {
+      "path": "/kling/videos",
+      "spec": "openapi/29187cb2-1acb-43b8-baf5-3f3f709292eb.json"
+    }
+  ],
+  "icon_source": {
+    "repository": "AceDataCloud/Dify",
+    "revision": "eaf0e68cd34cfe4cadece7a9ee34a98aac6b961e^",
+    "path": "plugins/kling/_assets/icon.jpg"
+  },
+  "icon_sha256": {
+    "icon.jpg": "566a04ffe1b66c63a08517f559f06ef221d67a3555e0bb277886ef19f7517d79"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "environment": "Dify CE 1.17.1, plugin daemon 0.6.10-local, official remote debug, signature verification enabled",
+  "marketplace_install_tested": false,
+  "cases": [
+    {
+      "case": "Kling Dify E2E",
+      "workflow_status": "failed",
+      "task_status": null,
+      "task_id": null,
+      "browser_ui_run": true,
+      "error": "An error occurred in the acedatacloud/kling/kling, please contact the author of acedatacloud/kling/kling for help, error type: AceDataKlingError, error details: Connection failed. Check request history for an accepted task before resubmitting."
+    },
+    {
+      "case": "Kling Dify Task Recovery",
+      "workflow_status": "succeeded",
+      "task_status": "succeeded",
+      "task_id": "f24531c0-8ca3-4e30-9f04-775ba09513f5",
+      "browser_ui_run": true,
+      "error": null
+    }
+  ],
+  "status": "E2E and output/billing audit in progress"
+}
