@@ -1,0 +1,64 @@
+{
+  "tested_at": "2026-10-07T06:27:26.762330+00:00",
+  "environment": "Dify CE 1.17.1 / plugin daemon 0.6.10-local",
+  "transport": "official remote-debug; signature verification true",
+  "browser_test_run": true,
+  "marketplace_install_tested": false,
+  "cloud_tested": false,
+  "cases": [
+    {
+      "case": "Kling Dify Task Recovery",
+      "operation": "kling_generate_video",
+      "workflow_run_id": "c0466b72-0162-4806-b760-20713bb5076e",
+      "workflow_status": "succeeded",
+      "task_status": "succeeded",
+      "task_id": "f24531c0-8ca3-4e30-9f04-775ba09513f5",
+      "trace_id": "fa801fac-5d31-440f-a5ec-390f942c9cdd",
+      "media_urls": [
+        "https://platform2.cdn.acedata.cloud/kling/f24531c0-8ca3-4e30-9f04-775ba09513f5.mp4"
+      ],
+      "output": [
+        {
+          "duration": 5.041,
+          "id": "f24531c0-8ca3-4e30-9f04-775ba09513f5",
+          "model": "kling-v3-turbo",
+          "state": "succeed",
+          "video_url": "https://platform2.cdn.acedata.cloud/kling/f24531c0-8ca3-4e30-9f04-775ba09513f5.mp4"
+        }
+      ],
+      "billing": {
+        "id": "074ca0f7-deed-4388-8ac2-5a5f7396d552",
+        "trace_id": "fa801fac-5d31-440f-a5ec-390f942c9cdd",
+        "status_code": 200,
+        "deducted_amount": 5.081328000000001,
+        "created_at": "2026-10-07T05:57:34.778226Z"
+      },
+      "media_verification": [
+        {
+          "case": "Kling Dify Task Recovery",
+          "size": 2385159,
+          "sha256": "6fe2f2106671170d94ca834d80c479e94a28f7e533d7baa226ed888432a93d44",
+          "duration": "5.041667",
+          "streams": [
+            {
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "width": null,
+              "height": null
+            },
+            {
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 1280,
+              "height": 720
+            }
+          ],
+          "full_decode": true
+        }
+      ],
+      "screenshot": "evidence/kling-dify-task-recovery.png",
+      "workflow": "evidence/kling-dify-task-recovery-workflow.json"
+    }
+  ],
+  "scope_note": "These completed cases establish the primary plugin operation. Additional exposed operations require their own case before claiming full coverage."
+}
