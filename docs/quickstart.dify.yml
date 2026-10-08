@@ -6,12 +6,7 @@ app:
   mode: workflow
   name: Kling Step-by-step Tutorial
   use_icon_as_answer_icon: false
-dependencies:
-- current_identifier: null
-  type: marketplace
-  value:
-    marketplace_plugin_unique_identifier: acedatacloud/kling:0.0.1@64f5f843f863fda7fdfc3687cfa442a5c2cd4b1668f078405ff838f0d9156a89
-    version: null
+dependencies: []
 kind: app
 version: 0.7.0
 workflow:
@@ -86,7 +81,6 @@ workflow:
       zIndex: 0
     - data:
         desc: ''
-        plugin_unique_identifier: acedatacloud/kling:0.0.1@64f5f843f863fda7fdfc3687cfa442a5c2cd4b1668f078405ff838f0d9156a89
         provider_id: acedatacloud/kling/kling
         provider_name: acedatacloud/kling/kling
         provider_type: builtin
@@ -137,7 +131,6 @@ workflow:
       zIndex: 0
     - data:
         desc: ''
-        plugin_unique_identifier: acedatacloud/kling:0.0.1@64f5f843f863fda7fdfc3687cfa442a5c2cd4b1668f078405ff838f0d9156a89
         provider_id: acedatacloud/kling/kling
         provider_name: acedatacloud/kling/kling
         provider_type: builtin
